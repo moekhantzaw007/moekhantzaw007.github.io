@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moe Khant Zaw | Portfolio</title>
+  <title>Moe Khant Zaw | Data Analyst Portfolio</title>
 
   <style>
     :root{
@@ -19,10 +19,9 @@
     }
 
     *{ box-sizing: border-box; }
-    html, body { height: 100%; }
     body{
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:
         radial-gradient(900px 400px at 20% 10%, rgba(56,189,248,0.20), transparent 60%),
         radial-gradient(800px 400px at 80% 20%, rgba(167,139,250,0.18), transparent 60%),
@@ -33,7 +32,6 @@
     }
 
     a{ color: inherit; text-decoration: none; }
-    a:hover{ opacity: 0.9; }
 
     .container{
       width: min(980px, calc(100% - 40px));
@@ -45,7 +43,6 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
       padding: 14px 16px;
       border: 1px solid var(--border);
       background: rgba(0,0,0,0.15);
@@ -53,7 +50,6 @@
       border-radius: 16px;
       position: sticky;
       top: 14px;
-      z-index: 10;
     }
 
     .brand{
@@ -61,36 +57,23 @@
       align-items:center;
       gap: 10px;
       font-weight: 700;
-      letter-spacing: 0.2px;
     }
 
     .dot{
       width: 10px; height: 10px;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 18px rgba(56,189,248,0.35);
     }
 
     .navlinks{
       display:flex;
       gap: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .navlinks a{
       color: var(--muted);
       font-weight: 600;
       font-size: 14px;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-    }
-
-    .navlinks a:hover{
-      color: var(--text);
-      border-color: var(--border);
-      background: rgba(255,255,255,0.05);
     }
 
     .hero{
@@ -98,36 +81,17 @@
       padding: 34px 26px;
       border: 1px solid var(--border);
       background: rgba(0,0,0,0.20);
-      backdrop-filter: blur(10px);
       border-radius: 22px;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .kicker{
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
     h1{
-      margin: 10px 0 10px;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -0.6px;
+      margin: 10px 0;
+      font-size: 38px;
     }
 
     .subtitle{
       color: var(--muted);
-      font-size: 16px;
-      max-width: 60ch;
+      max-width: 600px;
     }
 
     .chips{
@@ -140,108 +104,55 @@
     .chip{
       font-size: 13px;
       font-weight: 700;
-      color: rgba(255,255,255,0.82);
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.05);
-      padding: 8px 10px;
+      padding: 8px 12px;
       border-radius: 999px;
     }
 
-    .cta{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
     .btn{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 14px;
-      padding: 12px 14px;
-      border-radius: 14px;
+      display:inline-block;
+      margin-top: 16px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .btn-primary{
-      border-color: rgba(56,189,248,0.35);
       background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(167,139,250,0.18));
-      box-shadow: 0 10px 30px rgba(56,189,248,0.10);
     }
 
-    .btn span{
-      opacity: 0.8;
-      font-weight: 900;
+    section{
+      margin-top: 30px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(0,0,0,0.18);
+    }
+
+    h2{ margin-top: 0; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 15px;
     }
 
     .card{
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.05);
       border-radius: 18px;
-      padding: 18px;
-    }
-
-    .mini{
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .stat{
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,0.18);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .stat .label{
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    .stat .value{
-      margin-top: 6px;
-      font-weight: 900;
-      font-size: 16px;
-    }
-
-    section{
-      margin-top: 26px;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(10px);
-    }
-
-    h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: -0.2px;
-    }
-
-    p{ margin: 8px 0; color: rgba(255,255,255,0.86); }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 12px;
+      padding: 16px;
     }
 
     .proj-title{
-      font-weight: 900;
-      margin: 0 0 6px;
+      font-weight: 800;
       font-size: 16px;
+      margin-bottom: 6px;
     }
 
-    .muted{ color: var(--muted); }
+    .proj-title a{
+      color: var(--accent);
+    }
 
     .tagrow{
       display:flex;
@@ -252,32 +163,22 @@
 
     .tag{
       font-size: 12px;
-      font-weight: 800;
-      color: rgba(255,255,255,0.78);
+      font-weight: 700;
       border: 1px solid var(--soft);
       background: rgba(255,255,255,0.04);
-      padding: 6px 8px;
+      padding: 5px 8px;
       border-radius: 999px;
     }
 
-    .skills{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
     footer{
-      margin-top: 26px;
-      color: rgba(255,255,255,0.55);
-      text-align: center;
+      margin-top: 30px;
+      text-align:center;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    @media (max-width: 820px){
-      .hero-grid{ grid-template-columns: 1fr; }
+    @media(max-width: 768px){
       .grid{ grid-template-columns: 1fr; }
-      .nav{ position: static; }
     }
   </style>
 </head>
@@ -288,160 +189,103 @@
     <div class="nav">
       <div class="brand">
         <div class="dot"></div>
-        <div>Moe Khant Zaw</div>
+        Moe Khant Zaw
       </div>
-
       <div class="navlinks">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">Data • Analysis • Growth</div>
-          <h1>Data Analyst in training.<br/>Building skills with real-world datasets.</h1>
-          <div class="subtitle">
-            I’m a Data Science student at James Cook University Singapore. I’m currently focusing on
-            Python, SQL, data visualization, and machine learning — and I’m building my first analyst projects step-by-step.
-          </div>
-
-          <div class="chips">
-            <div class="chip">Python</div>
-            <div class="chip">SQL</div>
-            <div class="chip">Excel</div>
-            <div class="chip">Power BI (Learning)</div>
-            <div class="chip">Machine Learning</div>
-          </div>
-
-          <div class="cta">
-            <a class="btn btn-primary" href="https://github.com/moekhantzaw007" target="_blank" rel="noreferrer">
-              <span>↗</span> View GitHub
-            </a>
-            <a class="btn" href="#projects">
-              <span>↓</span> See Portfolio
-            </a>
-          </div>
-        </div>
-
-        <div class="mini">
-          <div class="stat">
-            <div class="label">Current Focus</div>
-            <div class="value">Data Analysis + Dashboards</div>
-          </div>
-          <div class="stat">
-            <div class="label">Looking for</div>
-            <div class="value">Internship / Junior Role</div>
-          </div>
-          <div class="stat">
-            <div class="label">Location</div>
-            <div class="value">Singapore</div>
-          </div>
-        </div>
+      <h1>Data Analyst in Training</h1>
+      <div class="subtitle">
+        Data Science student at James Cook University Singapore.
+        Building strong foundations in SQL, Python, and business-focused analytics.
       </div>
+
+      <div class="chips">
+        <div class="chip">Python</div>
+        <div class="chip">SQL</div>
+        <div class="chip">Excel</div>
+        <div class="chip">Power BI (Learning)</div>
+        <div class="chip">Machine Learning</div>
+      </div>
+
+      <a class="btn" href="https://github.com/moekhantzaw007" target="_blank">
+        View GitHub
+      </a>
     </div>
 
     <section id="about">
       <h2>About</h2>
       <p>
-        I’m currently studying Data Science at James Cook University Singapore. I enjoy turning messy data into clear insights.
-        My goal is to build strong foundations in analytics and deliver real business value through dashboards, reports, and data-driven decisions.
-      </p>
-      <p class="muted">
-        Currently building: small analyst projects (cleaning data, EDA, KPI dashboards). Bigger projects coming soon.
+        I enjoy transforming raw data into meaningful insights.
+        My goal is to deliver business value through dashboards,
+        clean data pipelines, and data-driven decision-making.
       </p>
     </section>
 
     <section id="projects">
-      <h2>Portfolio</h2>
-      <p class="muted">No worries if your projects aren’t “big” yet — start simple and professional.</p>
+      <h2>Portfolio Projects</h2>
 
       <div class="grid">
+
         <div class="card">
-          <div class="proj-title">https://github.com/moekhantzaw007/sql-layoffs-data-cleaning</div>
-          <div class="muted">Exploratory Data Analysis + Data Cleaning</div>
+          <div class="proj-title">
+            <a href="https://github.com/moekhantzaw007/sql-layoffs-data-cleaning" 
+               target="_blank" 
+               rel="noreferrer">
+               SQL Layoffs Data Cleaning
+            </a>
+          </div>
+          <div>
+            Cleaned and transformed a global layoffs dataset using SQL.
+            Removed duplicates, standardized formats, handled null values,
+            and prepared structured data for analysis.
+          </div>
           <div class="tagrow">
-            <div class="tag">Pandas</div>
-            <div class="tag">EDA</div>
-            <div class="tag">Visualization</div>
+            <div class="tag">SQL</div>
+            <div class="tag">Data Cleaning</div>
+            <div class="tag">CTEs</div>
+            <div class="tag">Joins</div>
           </div>
         </div>
 
         <div class="card">
-          <div class="proj-title">Project #2 (Coming soon)</div>
-          <div class="muted">Dashboard with KPIs (Power BI / Excel)</div>
+          <div class="proj-title">Dashboard Project (Coming Soon)</div>
+          <div>Business KPI dashboard using Power BI or Excel.</div>
           <div class="tagrow">
             <div class="tag">Power BI</div>
             <div class="tag">KPIs</div>
-            <div class="tag">Storytelling</div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="proj-title">Project #3 (Coming soon)</div>
-          <div class="muted">SQL analysis: queries + business questions</div>
-          <div class="tagrow">
-            <div class="tag">SQL</div>
-            <div class="tag">Joins</div>
-            <div class="tag">CTEs</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="proj-title">Project #4 (Coming soon)</div>
-          <div class="muted">Machine Learning mini-project (baseline model + evaluation)</div>
-          <div class="tagrow">
-            <div class="tag">Scikit-learn</div>
-            <div class="tag">Evaluation</div>
-            <div class="tag">Modeling</div>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="chip">Python (Pandas, NumPy)</div>
-        <div class="chip">SQL</div>
-        <div class="chip">Excel</div>
-        <div class="chip">Data Visualization</div>
-        <div class="chip">Machine Learning (Basics)</div>
-        <div class="chip">GitHub</div>
-      </div>
-      <p class="muted" style="margin-top:10px;">
-        Tip: later you can add Power BI/Tableau + more analyst tools.
-      </p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>
-        Email: <strong>moekhantzawm@email.com</strong> <span class="muted"></span><br/>
-        GitHub: <a href="https://github.com/moekhantzaw007" target="_blank" rel="noreferrer"><strong>@moekhantzaw007</strong></a><br/>
-        LinkedIn: <span class="muted">add when ready</span>
+        Email: <strong>moekhantzawm@email.com</strong><br/>
+        GitHub: <a href="https://github.com/moekhantzaw007" target="_blank">@moekhantzaw007</a>
       </p>
 
-      <div class="cta" style="margin-top: 12px;">
-        <a class="btn btn-primary" href="mailto:your@email.com">
-          <span>✉</span> Email Me
-        </a>
-        <a class="btn" href="https://github.com/moekhantzaw007" target="_blank" rel="noreferrer">
-          <span>↗</span> GitHub
-        </a>
-      </div>
+      <a class="btn" href="mailto:moekhantzawm@email.com">
+        Email Me
+      </a>
     </section>
 
     <footer>
       © <span id="year"></span> Moe Khant Zaw • Built with GitHub Pages
     </footer>
+
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
